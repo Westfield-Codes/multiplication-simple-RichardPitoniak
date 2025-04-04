@@ -23,14 +23,14 @@ else alert ("you got " + right + " out of " + questions)
  * @param: none
  * @return: {integer} score (0-questions)
  */
-function askQuestions() {
+function askQuestions(questions) {
 let right = 0
 let question = 1
 while (question <= questions ) {
-  score += askQuestion(questions)
-questions++
+right += askQuestion(question)
+question++
 }
-right
+return right
 }
 
 /* askQuestion asks a multiplication question, using the question parameter to say which
