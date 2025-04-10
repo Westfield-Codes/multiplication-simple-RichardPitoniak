@@ -18,6 +18,12 @@ var high = 9
  * @return: none
  */
 function main(){
+let score = 0
+let questions = setUp
+for (let question = 1; question <= questions; question++){
+    score += askQuestion(questions)
+    showStats(score,questions)
+}
 
 }
 
@@ -29,7 +35,14 @@ function main(){
  */
 function setUp(){
     let questions = 5
-    return questions;
+    let defaults = confirm ("do you want to use the default settings?")
+    if (defaults == false){
+        low = changeVar(low)
+        high = changeVar(high)
+        questions = changeVar(questions)
+    }
+    else alert ("defaults ket")
+    return questions
 }
 
 /* Function changeVar(variable)
@@ -85,5 +98,5 @@ function showTable(factor){
  * @return: none
  */
 function showErrors(errors){
-    
+
 }
