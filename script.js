@@ -8,7 +8,6 @@
  */
 var low = 3
 var high = 9
-
 /* Function main() THIS REPLACES askQuestions(
  * Calls setup to change default values
  * Calls askQuestion with question number argument
@@ -19,7 +18,7 @@ var high = 9
  */
 function main(){
 let score = 0
-let questions = setUp
+let questions = setUp()
 for (let question = 1; question <= questions; question++){
     score += askQuestion(questions)
     showStats(score,questions)
