@@ -24,7 +24,6 @@ for (let question = 1; question <= questions; question++){
     score += askQuestion(questions)
     showStats(score,questions)
 }
-
 }
 
 /* Function setUp()
@@ -41,7 +40,7 @@ function setUp(){
         high = changeVar(high)
         questions = changeVar(questions)
     }
-    else alert ("defaults ket")
+    else alert ("defaults kept")
     return questions
 }
 
@@ -52,7 +51,8 @@ function setUp(){
  * @return: {integer} value 
  */
 function changeVar(variable){
-    let value = 3
+    let value = prompt ("choose your " + variable + " value")
+    value = parseInt(value)
     return value 
 }
 
