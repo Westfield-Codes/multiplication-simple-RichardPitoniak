@@ -76,7 +76,6 @@ function askQuestion(question){
         alert ("incorrect")
         return false
     }
-   
 }
 
 /* Function showStats()
@@ -90,9 +89,22 @@ function askQuestion(question){
  * @return: none
  */
 function showStats(score, questions){
+let tables = true
+let factor = 0
+let more = "any"
+if (score == questions) alert("Perfect!")
+else {
+    alert ("you got " + score + " out of " + questions + " right")}
 
+while (tables == true) {
+let tables = confirm ("do you want to study " + more + " tables")
+if (tables == true) {
+    factor = prompt ("show table for which factor?")
+    showTable(factor)
 }
-
+more = more
+}
+}
 /* Function showTable(factor)
  * Display the table for the factor passed as a parameter
  * Builds table line by line with a loop, then shows table 
