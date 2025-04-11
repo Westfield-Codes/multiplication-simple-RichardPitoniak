@@ -35,9 +35,9 @@ function setUp(){
     let questions = 5
     let defaults = confirm ("do you want to use the default settings?")
     if (defaults == false){
-        low = changeVar(low)
-        high = changeVar(high)
-        questions = changeVar(questions)
+        low = changeVar("low")
+        high = changeVar("high")
+        questions = changeVar("questions")
     }
     else alert ("defaults kept")
     return questions
@@ -57,12 +57,26 @@ function changeVar(variable){
 
 /* Function askQuestion(question) 
  * Asks a multiplication question: 2 factors between low and high ranges
- * Provides feedback (correct?), returns true if correct, false if not * Adds missed factors to mistakes array.
+ * Provides feedback (correct?), returns true if correct, false if not 
+ * Adds missed factors to mistakes array.
  * @param: {integer} question 
  * @return: boolean value 
  */
 function askQuestion(question){
-    return true
+    let a = Math.floor(Math.random()*(high - low+1))+low
+    let b = Math.floor(Math.random()*(high - low+1))+low
+    let product = a*b
+    let equation = "question " + question + " :" + " what is " + a + " * " + b + " ? "
+    let answer = prompt(equation)
+    if (answer == product) {
+        alert ("correct")
+        return true
+    }
+    else {
+        alert ("incorrect")
+        return false
+    }
+   
 }
 
 /* Function showStats()
