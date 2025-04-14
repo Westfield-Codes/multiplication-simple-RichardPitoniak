@@ -97,12 +97,12 @@ else {
     alert ("you got " + score + " out of " + questions + " right")}
 
 while (tables == true) {
-let tables = confirm ("do you want to study " + more + " tables")
+ tables = confirm ("do you want to study " + more + " tables")
 if (tables == true) {
     factor = prompt ("show table for which factor?")
     showTable(factor)
+    more = "more"
 }
-more = more
 }
 }
 /* Function showTable(factor)
@@ -113,7 +113,11 @@ more = more
  * @return: none
  */
 function showTable(factor){
-
+let table = "times table for " + factor + "\n"
+for (let line = low; line <= high; line++){
+    table+= factor  + "*" + line + " = " + factor*line + "\n"
+    alert (table)
+}
 }
 
 /* Function showErrors(errors)
