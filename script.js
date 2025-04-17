@@ -8,6 +8,7 @@
  */
 var low = 3
 var high = 9
+var errors = []
 /* Function main() THIS REPLACES askQuestions(
  * Calls setup to change default values
  * Calls askQuestion with question number argument
@@ -20,9 +21,9 @@ function main(){
 let score = 0
 let questions = setUp()
 for (let question = 1; question <= questions; question++){
-    score += askQuestion(questions)
-    showStats(score,questions)
+    score += askQuestion(question)
 }
+showStats(score,questions)
 }
 
 /* Function setUp()
@@ -50,8 +51,9 @@ function setUp(){
  * @return: {integer} value 
  */
 function changeVar(variable){
-    let value = prompt ("choose your " + variable + " value")
+    let value = prompt("choose your " + variable + " value")
     value = parseInt(value)
+    console.log(variable+"="+value)
     return value 
 }
 
@@ -74,6 +76,8 @@ function askQuestion(question){
     }
     else {
         alert ("incorrect")
+        errors.push(a,b)
+        console.log(errors.toString)
         return false
     }
 }
